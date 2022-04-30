@@ -1,0 +1,84 @@
+{
+  "login": {
+    "login": "Login",
+    "email": "Enter your email",
+    "password": "Password",
+    "password-input": "Enter your password",
+    "forgot-password": "Forgot your password?",
+    "social-login": "Or login with:"
+  },
+  "home-header": {
+    "speciality": "Medical specialty",
+    "searchdoctor": "Find a doctor by specialty",
+    "health-facility": "Health facilities",
+    "select-room": "Choose hospital clinic",
+    "doctor": "Doctor",
+    "select-doctor": "Choose a good doctor",
+    "fee": "Check up package",
+    "check-health": "General health check",
+    "support": "Support",
+    "welcome": "Welcome"
+  },
+  "banner": {
+    "title1": "MEDICAL PLATFORM",
+    "title2": "COMPREHENSIVE HEALTH CARE",
+    "child1": "Specialized examination",
+    "child2": "Remote examination",
+    "child3": "General examination",
+    "child4": "Medical test",
+    "child5": "Mental health",
+    "child6": "Dental examination"
+  },
+  "about": {
+    "social-media": "Social media"
+  },
+  "menu": {
+    "admin": {
+      "manage-user": "Menu",
+      "manage-doctor": "Manage doctor's descriptions",
+      "manage-admin": "Manage admin",
+      "crud": "CRUD user",
+      "crud-redux": "Manage user",
+      "clinic": "Clinics",
+      "manage-clinic": "Manage clinics",
+      "specialty": "Specialties",
+      "manage-specialty": "Manage specialties",
+      "handbook": "Handbook",
+      "manage-handbook": "Manage handbook"
+    },
+    "doctor": {
+      "manage-schedule": "Manage doctor's schedule"
+    }
+  },
+  "manage-user": {
+    "add": "Add a new user",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phonenumber": "Phone number",
+    "address": "Address",
+    "gender": "Gender",
+    "position": "Position",
+    "role": "Role",
+    "image": "Avatar",
+    "save": "Save user",
+    "upload": "Upload"
+  },
+  "manage-doctor": {
+    "title": "Create doctor's description",
+    "child1": "Select doctor",
+    "child2": "Description information"
+  },
+  "manage-schedule": {
+    "title": "Manage doctor's schedule",
+    "child1": "Select doctor",
+    "child2": "Select date",
+    "save": "Save"
+  },
+  "homepage": {
+    "outstanding-doctor": "Outstanding doctors",
+    "more-info": "More",
+    "schedule": "Schedule"
+  }
+}

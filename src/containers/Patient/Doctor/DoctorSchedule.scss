@@ -1,0 +1,51 @@
+
+  .select-container {
+    margin: 30px 100px 0;
+    select {
+      border: none;
+      border-bottom: solid 1px #ddd;
+      outline: none;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 10px 0;
+      
+      option {
+        cursor: pointer;
+      }
+    }
+
+    .text-schedule {
+      margin: 10px;
+      color: #333;
+      span {
+        text-transform: uppercase;
+        margin-left: 5px;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  .schedule-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    column-gap: 90px;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    .btn-schedule {
+      &.active {
+        background-color: rgb(86, 85, 85);
+        cursor: not-allowed;
+        font-weight: 500;
+        color: white;
+      }
+    }
+
+    button {
+      width: 162px;
+      padding: 8px 15px;
+      border: 1px solid grey;
+    }
+  }
