@@ -1,11 +1,19 @@
+@import "../../styles/styles.scss";
+
 .login__background {
   height: 100vh;
   background: rgb(34, 193, 195);
   background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
 
   .login__container {
+    @include sm {
+      width: 400px;
+    }
+    @include xxs {
+      width: 80%;
+    }
     height: 60%;
-    width: 30%;
+    width: 350px;
     margin: auto;
     background-color: white;
     padding: 15px 5px;
@@ -48,10 +56,16 @@
 
       .forgot-password {
         font-size: 12px;
+        color: black;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+          color: red
+        }
       }
 
       .social-login {
-        display: flex;
+        display: none;
         justify-content: center;
 
         .google {

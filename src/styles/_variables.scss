@@ -1,3 +1,4 @@
+
 $base-size: 16px;
 $lh: 1.313;
 $fontmain:"Helvetica", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -42,3 +43,22 @@ $date-picker-today-border: $common-orange;
 $date-picker-today-bg: $common-orange;
 $date-picker-today-fg: #000;
 $date-picker-day-selected-fg: $common-white;
+
+//============================================================//
+/*BOXED LAYOUT*/
+
+$container-max-width: 1920px;
+$container-width: 1010px; // tùy thuộc vào container của bản thiết kế mà chỉnh sửa cho hợp lý
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 576px; // CÓ THỂ TÙY CHỈNH
+$xs-min: 768px; // KHÔNG THAY ĐỔI
+$sm-min: 992px; // KHÔNG THAY ĐỔI
+$md-min: 1200px; // KHÔNG THAY ĐỔI
+$lg-min: 1600px; // CÓ THỂ TÙY CHỈNH
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
