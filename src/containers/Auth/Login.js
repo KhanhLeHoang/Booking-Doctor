@@ -91,15 +91,16 @@ class Login extends Component {
             <div className='col-12'>
               <span className='forgot-password'><FormattedMessage id='login.forgot-password' /></span>
             </div>
-            <div className='col-12 text-center'>
+            {/* <div className='col-12 text-center'>
               <span><FormattedMessage id='login.social-login' /></span>
-            </div>
+            </div> */}
             <div className='col-12 social-login'>
               <i className="fab google fa-google-plus-g"></i>
               <i className="fab fb fa-facebook"></i>
             </div>
           </div>
         </div>
+
       </div>
     )
   }
