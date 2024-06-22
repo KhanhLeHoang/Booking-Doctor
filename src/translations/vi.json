@@ -34,7 +34,7 @@
   },
   "menu": {
     "admin": {
-      "manage-user": "Menu",
+      "menu": "Menu",
       "manage-doctor": "Quản lý mô tả bác sĩ",
       "manage-admin": "Quản lý admin",
       "crud": "CRUD user",

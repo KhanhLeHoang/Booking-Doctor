@@ -3,50 +3,61 @@
 .header-container {
   z-index: 99;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   background-color: $colormain;
   color: $common-text-color;
   height: 40px;
   position: relative;
+  .header-tabs-container {
+    display: flex;
+    // flex-basis: 0;
 
-  .btn-logout {
-    color: $common-text-color;
-    line-height: 40px;
-    height: 40px;
-    padding: 0 10px;
-
-    &:hover {
-      background-color: darken($colormain, 5);
+    .header-logo {
+      height: 100%;
+      cursor: pointer;
+      transform: scale(0.9, 0.9);
+      justify-content: center;
     }
-
-    i {
-      font-size: $base-size + 1px;
+  }
+  .header-content-right {
+    // flex-basis: 0;
+    .welcome {
+      margin-right: 40px;
+    }
+  
+    .btn-logout {
+      color: $common-text-color;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 10px;
+  
+      &:hover {
+        background-color: darken($colormain, 5);
+      }
+  
+      i {
+        font-size: $base-size + 1px;
+      }
+    }
+    .language-en {
+      margin-right: 15px;
+      margin-left: 10px;
+      cursor: pointer;
+  
+      &.active {
+        opacity: 1;
+        color: orange;
+      }
+    }
+  
+    .language-vi {
+      cursor: pointer;
+  
+      &.active {
+        opacity: 1;
+        color: orange;
+      }
     }
   }
 }
 
-.header-content-right {
-  .welcome {
-    margin-right: 40px;
-  }
-
-  .language-en {
-    margin-right: 15px;
-    margin-left: 10px;
-    cursor: pointer;
-
-    &.active {
-      opacity: 1;
-      color: orange;
-    }
-  }
-
-  .language-vi {
-    cursor: pointer;
-
-    &.active {
-      opacity: 1;
-      color: orange;
-    }
-  }
-}

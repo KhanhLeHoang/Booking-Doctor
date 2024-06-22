@@ -7,6 +7,7 @@ const initialState = {
   positionRedux: [],
   users: [],
   topDoctors: [],
+  isLoadingTopDoctors: false,
   allDoctors: [],
   scheduleTimes: []
 }
@@ -28,7 +29,7 @@ const adminReducer = (state = initialState, action) => {
     case actionTypes.FETCH_GENDER_FAILED:
       copyState.isLoadingGender = false
       return {
-        ...state,
+        ...copyState,
       }
     case actionTypes.FETCH_POSITION_SUCCESS:
       copyState.positionRedux = action.data
@@ -37,7 +38,7 @@ const adminReducer = (state = initialState, action) => {
       }
     case actionTypes.FETCH_POSITION_FAILED:
       return {
-        ...state,
+        ...copyState,
       }
     case actionTypes.FETCH_ROLE_SUCCESS:
       copyState.roleRedux = action.data
@@ -46,25 +47,33 @@ const adminReducer = (state = initialState, action) => {
       }
     case actionTypes.FETCH_ROLE_FAILED:
       return {
-        ...state,
+        ...copyState,
       }
     case actionTypes.FETCH_ALL_USERS_SUCCESS:
       copyState.users = action.users
+      copyState.isLoadingTopDoctors = true
+      return {
+        ...copyState,
+      }
+    case actionTypes.FETCH_TOP_DOCTORS_START:
+      copyState.isLoadingTopDoctors = true
       return {
         ...copyState,
       }
     case actionTypes.FETCH_ALL_USERS_FAILED:
+      copyState.isLoadingTopDoctors = false
       return {
-        ...state,
+        ...copyState,
       }
     case actionTypes.FETCH_TOP_DOCTORS_SUCCESS:
+      copyState.isLoadingTopDoctors = false
       copyState.topDoctors = action.data
       return {
         ...copyState,
       }
     case actionTypes.FETCH_TOP_DOCTORS_FAILED:
       return {
-        ...state,
+        ...copyState,
       }
     case actionTypes.FETCH_ALL_DOCTORS_SUCCESS:
       copyState.allDoctors = action.data
@@ -73,7 +82,7 @@ const adminReducer = (state = initialState, action) => {
       }
     case actionTypes.FETCH_ALL_DOCTORS_FAILED:
       return {
-        ...state,
+        ...copyState,
       }
     case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS:
       copyState.scheduleTimes = action.data
@@ -82,7 +91,7 @@ const adminReducer = (state = initialState, action) => {
       }
     case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED:
       return {
-        ...state,
+        ...copyState,
       }
     default:
       return state;

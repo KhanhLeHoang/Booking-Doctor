@@ -7,7 +7,9 @@ import { adminMenu, doctorMenu } from './menuApp';
 import './Header.scss';
 import { LANGUAGES, USER_ROLE } from '../../utils/constant';
 import { FormattedMessage } from 'react-intl';
+import logo from '../../assets/logo.svg';
 import _ from 'lodash';
+import { withRouter } from 'react-router'
 
 class Header extends Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class Header extends Component {
   }
   componentDidMount() {
     let { userInfo } = this.props
+    console.log(userInfo);
     let menu = []
     if (userInfo && !_.isEmpty(userInfo)) {
       let role = userInfo.roleId
@@ -33,19 +36,25 @@ class Header extends Component {
     })
   }
 
+  handleOnClickLogo = () => {
+    this.props.history.push('/home')
+    console.log('ok')
+  }
+
   handleChangeLanguage = (language) => {
     this.props.changeLanguageAppRedux(language)
   }
   render() {
     const { processLogout, language, userInfo } = this.props;
+    // console.log(this.state.menuApp)
 
     return (
       <div className="header-container">
         {/* thanh navigator */}
         <div className="header-tabs-container">
           <Navigator menus={this.state.menuApp} />
+          <img className='header-logo' src={logo} onClick={() => this.handleOnClickLogo()} />
         </div>
-        {/* nút logout */}
         <div className='header-content-right'>
           <span className='welcome'>
             <FormattedMessage id='home-header.welcome' />, {userInfo && userInfo.firstName ? userInfo.firstName : ''}!
@@ -62,6 +71,7 @@ class Header extends Component {
           >
             EN
           </span>
+          {/* nút logout */}
           <div className="btn btn-logout" onClick={processLogout} title='Log out'>
             <i className="fas fa-sign-out-alt"></i>
           </div>
@@ -87,4 +97,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

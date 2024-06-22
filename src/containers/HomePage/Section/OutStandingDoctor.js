@@ -11,6 +11,7 @@ class OutStandingDoctor extends Component {
     super(props)
     this.state = {
       topDoctors: [],
+      
     }
   }
   componentDidMount() {
@@ -29,7 +30,8 @@ class OutStandingDoctor extends Component {
 
   render() {
     let { topDoctors } = this.state
-    let { language } = this.props
+    let { language,isLoadingTopDoctors } = this.props
+    console.log(isLoadingTopDoctors)
     return (
       <div className='section-share section-doctor'>
         <div className='section-container'>
@@ -37,6 +39,7 @@ class OutStandingDoctor extends Component {
             <span className='title-section'><FormattedMessage id={'homepage.outstanding-doctor'} /></span>
             <button className='btn-section'><FormattedMessage id={'homepage.more-info'} /></button>
           </div>
+          {isLoadingTopDoctors && <div class="align-self-center spinner-border text-info" role="status"></div>}
           <div className='section-body'>
             <Slider {...this.props.settings}>
               {topDoctors && topDoctors.length > 0 && topDoctors.map((item, index) => {
@@ -73,7 +76,8 @@ const mapStateToProps = state => {
   return {
     language: state.app.language,
     isLoggedIn: state.user.isLoggedIn,
-    topDoctors: state.admin.topDoctors
+    topDoctors: state.admin.topDoctors,
+    isLoadingTopDoctors: state.admin.isLoadingTopDoctors
   };
 };
 

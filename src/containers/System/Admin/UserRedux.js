@@ -334,6 +334,7 @@ class UserRedux extends Component {
 
 }
 
+
 const mapStateToProps = state => {
   return {
     language: state.app.language,

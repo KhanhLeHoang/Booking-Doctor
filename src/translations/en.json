@@ -34,7 +34,7 @@
   },
   "menu": {
     "admin": {
-      "manage-user": "Menu",
+      "menu": "Menu",
       "manage-doctor": "Manage doctor's descriptions",
       "manage-admin": "Manage admin",
       "crud": "CRUD user",

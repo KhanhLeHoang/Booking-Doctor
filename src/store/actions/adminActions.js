@@ -216,6 +216,7 @@ export const editUserFailed = () => ({
 export const fetchTopDoctorsStart = (limit) => {
   return async (dispatch, getState) => {
     try {
+      dispatch({type: actionTypes.FETCH_TOP_DOCTORS_START})
       let res = await getTopDoctorService(limit)
       if (res && res.errCode === 0) {
         dispatch({

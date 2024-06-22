@@ -59,7 +59,7 @@ class DoctorSchedule extends Component {
   handleOnClickBtnTime = (time) => {
     let { rangeTime } = this.state
     rangeTime.forEach(item => {
-      if (item.id === time.id && item.isSelected === false) {
+      if (item.id === time.id && item.isSelected !== false) {
         let input = prompt(this.props.language === LANGUAGES.VI ? "Nhập số điện thoại của bạn để đặt lịch:" : "Please enter your phone number to booking schedule:");
         if (input == null || input == "" || isNaN(input) || input.length < 10 || input.length > 12) {
           toast.error(this.props.language === LANGUAGES.VI ? "Số điện thoại chưa đúng, đặt lịch thất bại!" : "Invalid phone number, booking schedule failed!")
@@ -68,6 +68,8 @@ class DoctorSchedule extends Component {
             `Cảm ơn bạn đã đặt lịch hẹn, chúng tôi sẽ liên hệ lại bạn qua số điện thoại ${input} trong thời gian sớm nhất!`
             : `Thank you for booking schedule, we will contact to phone number ${input} soon!`)
         }
+      }else if(item.id === time.id && item.isSelected === false){
+        toast.error(this.props.language === LANGUAGES.VI ? "Bác sĩ không có lịch khám vào khung giờ này, vui lòng chọn khung giờ khác!":"Doctor is offline this schedule, please choose another schedule!")
       }
     })
   }
@@ -105,7 +107,7 @@ class DoctorSchedule extends Component {
                 rangeTime.map((item, index) => {
                   return (
                     <button key={index} value={item.keyMap}
-                      className={item.isSelected ? 'btn btn-schedule active' : 'btn btn-schedule'}
+                      className={!item.isSelected ? 'btn btn-schedule inactive' : 'btn btn-schedule'}
                       onClick={() => this.handleOnClickBtnTime(item)}
                     >
                       {language === LANGUAGES.VI ? item.value_vi : item.value_en}

@@ -35,7 +35,11 @@
     flex-wrap: wrap;
     justify-content: center;
     .btn-schedule {
-      &.active {
+      // background-color: rgb(86, 85, 85);
+      // cursor: not-allowed;
+      // font-weight: 500;
+      // color: white;
+      &.inactive {
         background-color: rgb(86, 85, 85);
         cursor: not-allowed;
         font-weight: 500;
